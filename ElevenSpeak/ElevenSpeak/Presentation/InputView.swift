@@ -9,20 +9,17 @@ struct InputView: View {
 
     var body: some View {
         HStack {
-            TextField("Type something...", text: $text, onCommit: onCommit)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
             Button(action: {
-                // Handle the microphone button press
                 startListening()
             }) {
                 Image(systemName: "mic.fill")
-                    .foregroundColor(.white)
             }
-            .background(Color.blue)
             .clipShape(Circle())
             .padding()
         }
     }
 
-    func startListening() {}
+    func startListening() {
+        // TODO:
+    }
 }

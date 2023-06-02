@@ -10,7 +10,6 @@
 		FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */; };
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
-		FD541A052A2A0C7900F68C68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A042A2A0C7900F68C68 /* Preview Assets.xcassets */; };
 		FD541A0D2A2A0D9200F68C68 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0C2A2A0D9200F68C68 /* MessageView.swift */; };
 		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
 		FD541A112A2A0DA600F68C68 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A102A2A0DA600F68C68 /* ViewModel.swift */; };
@@ -25,7 +24,6 @@
 		FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenSpeakApp.swift; sourceTree = "<group>"; };
 		FD5419FF2A2A0C7800F68C68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FD541A042A2A0C7900F68C68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
 		FD541A0C2A2A0D9200F68C68 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -66,26 +64,57 @@
 		FD5419FC2A2A0C7800F68C68 /* ElevenSpeak */ = {
 			isa = PBXGroup;
 			children = (
-				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
-				FD5419FF2A2A0C7800F68C68 /* ContentView.swift */,
-				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
+				FD541A1F2A2A1CA000F68C68 /* Extension */,
+				FD541A1E2A2A1C9400F68C68 /* Application */,
+				FD541A222A2A1CB500F68C68 /* Service */,
+				FD541A202A2A1CA500F68C68 /* Model */,
+				FD541A212A2A1CAD00F68C68 /* Presentation */,
 				FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */,
-				FD541A032A2A0C7900F68C68 /* Preview Content */,
-				FD541A0C2A2A0D9200F68C68 /* MessageView.swift */,
-				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
-				FD541A102A2A0DA600F68C68 /* ViewModel.swift */,
-				FD541A122A2A0DB000F68C68 /* Message.swift */,
-				FD541A1A2A2A169F00F68C68 /* Constants.swift */,
 			);
 			path = ElevenSpeak;
 			sourceTree = "<group>";
 		};
-		FD541A032A2A0C7900F68C68 /* Preview Content */ = {
+		FD541A1E2A2A1C9400F68C68 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				FD541A042A2A0C7900F68C68 /* Preview Assets.xcassets */,
+				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
+				FD541A1A2A2A169F00F68C68 /* Constants.swift */,
+				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
 			);
-			path = "Preview Content";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FD541A1F2A2A1CA000F68C68 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FD541A202A2A1CA500F68C68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD541A122A2A0DB000F68C68 /* Message.swift */,
+				FD541A102A2A0DA600F68C68 /* ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD541A212A2A1CAD00F68C68 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
+				FD5419FF2A2A0C7800F68C68 /* ContentView.swift */,
+				FD541A0C2A2A0D9200F68C68 /* MessageView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FD541A222A2A1CB500F68C68 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +185,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD541A052A2A0C7900F68C68 /* Preview Assets.xcassets in Resources */,
 				FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +372,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ElevenSpeak/Preview Content\"";
 				DEVELOPMENT_TEAM = F7AZ625QQ5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -380,7 +407,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ElevenSpeak/Preview Content\"";
 				DEVELOPMENT_TEAM = F7AZ625QQ5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
