@@ -1,9 +1,5 @@
-//
-//  ElevenSpeakApp.swift
-//  ElevenSpeak
-//
-//  Created by Bogdan Bystritskiy on 02.06.2023.
-//
+// ElevenSpeakApp.swift
+// ElevenSpeak. Created by Bogdan Bystritskiy.
 
 import SwiftUI
 

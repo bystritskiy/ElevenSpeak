@@ -1,26 +1,24 @@
-//
-//  ContentView.swift
-//  ElevenSpeak
-//
-//  Created by Bogdan Bystritskiy on 02.06.2023.
-//
+// ContentView.swift
+// ElevenSpeak. Created by Bogdan Bystritskiy.
 
+import AVFoundation
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel: ViewModel
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ScrollView {
+                ForEach(viewModel.messages, id: \.self) { message in
+                    MessageView(message: message)
+                }
+            }
+            InputView(text: $viewModel.currentInput, onCommit: viewModel.sendMessage)
         }
-        .padding()
     }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    init() {
+        viewModel = ViewModel()
     }
 }

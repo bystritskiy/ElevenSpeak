@@ -11,6 +11,13 @@
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
 		FD541A052A2A0C7900F68C68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A042A2A0C7900F68C68 /* Preview Assets.xcassets */; };
+		FD541A0D2A2A0D9200F68C68 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0C2A2A0D9200F68C68 /* MessageView.swift */; };
+		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
+		FD541A112A2A0DA600F68C68 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A102A2A0DA600F68C68 /* ViewModel.swift */; };
+		FD541A132A2A0DB000F68C68 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A122A2A0DB000F68C68 /* Message.swift */; };
+		FD541A162A2A14E000F68C68 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = FD541A152A2A14E000F68C68 /* SwiftWhisper */; };
+		FD541A192A2A15ED00F68C68 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD541A182A2A15ED00F68C68 /* ChatGPTSwift */; };
+		FD541A1B2A2A169F00F68C68 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A1A2A2A169F00F68C68 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,11 @@
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A042A2A0C7900F68C68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
+		FD541A0C2A2A0D9200F68C68 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		FD541A102A2A0DA600F68C68 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FD541A122A2A0DB000F68C68 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FD541A1A2A2A169F00F68C68 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD541A192A2A15ED00F68C68 /* ChatGPTSwift in Frameworks */,
+				FD541A162A2A14E000F68C68 /* SwiftWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +71,11 @@
 				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
 				FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */,
 				FD541A032A2A0C7900F68C68 /* Preview Content */,
+				FD541A0C2A2A0D9200F68C68 /* MessageView.swift */,
+				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
+				FD541A102A2A0DA600F68C68 /* ViewModel.swift */,
+				FD541A122A2A0DB000F68C68 /* Message.swift */,
+				FD541A1A2A2A169F00F68C68 /* Constants.swift */,
 			);
 			path = ElevenSpeak;
 			sourceTree = "<group>";
@@ -79,12 +98,18 @@
 				FD5419F62A2A0C7800F68C68 /* Sources */,
 				FD5419F72A2A0C7800F68C68 /* Frameworks */,
 				FD5419F82A2A0C7800F68C68 /* Resources */,
+				FD541A1C2A2A175B00F68C68 /* SwiftLint */,
+				FD541A1D2A2A179200F68C68 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ElevenSpeak;
+			packageProductDependencies = (
+				FD541A152A2A14E000F68C68 /* SwiftWhisper */,
+				FD541A182A2A15ED00F68C68 /* ChatGPTSwift */,
+			);
 			productName = ElevenSpeak;
 			productReference = FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +138,10 @@
 				Base,
 			);
 			mainGroup = FD5419F12A2A0C7800F68C68;
+			packageReferences = (
+				FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
+				FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+			);
 			productRefGroup = FD5419FB2A2A0C7800F68C68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,11 +163,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FD541A1C2A2A175B00F68C68 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		FD541A1D2A2A179200F68C68 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD5419F62A2A0C7800F68C68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD541A112A2A0DA600F68C68 /* ViewModel.swift in Sources */,
+				FD541A0D2A2A0D9200F68C68 /* MessageView.swift in Sources */,
+				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
+				FD541A132A2A0DB000F68C68 /* Message.swift in Sources */,
+				FD541A1B2A2A169F00F68C68 /* Constants.swift in Sources */,
 				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
 				FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */,
 			);
@@ -354,6 +429,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exPHAT/SwiftWhisper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD541A152A2A14E000F68C68 /* SwiftWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
+			productName = SwiftWhisper;
+		};
+		FD541A182A2A15ED00F68C68 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FD5419F22A2A0C7800F68C68 /* Project object */;
 }
