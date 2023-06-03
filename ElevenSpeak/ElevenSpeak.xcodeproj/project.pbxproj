@@ -16,6 +16,8 @@
 		FD81475F2A2B614800825C4A /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FD81475E2A2B614800825C4A /* OpenAI */; };
 		FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147602A2B62A500825C4A /* WhisperService.swift */; };
 		FD8147632A2B6B3700825C4A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147622A2B6B3700825C4A /* Secret.swift */; };
+		FD8147652A2B730E00825C4A /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147642A2B730E00825C4A /* GPTService.swift */; };
+		FD8147672A2B78F200825C4A /* Promt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147662A2B78F200825C4A /* Promt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaveformView.swift; sourceTree = "<group>"; };
 		FD8147602A2B62A500825C4A /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		FD8147622A2B6B3700825C4A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		FD8147642A2B730E00825C4A /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
+		FD8147662A2B78F200825C4A /* Promt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
 				FD8147622A2B6B3700825C4A /* Secret.swift */,
+				FD8147662A2B78F200825C4A /* Promt.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				FD80928E2A2B0958008EA8A2 /* AudioService.swift */,
 				FD8147602A2B62A500825C4A /* WhisperService.swift */,
+				FD8147642A2B730E00825C4A /* GPTService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8147672A2B78F200825C4A /* Promt.swift in Sources */,
 				FD80928F2A2B0958008EA8A2 /* AudioService.swift in Sources */,
 				FD8147632A2B6B3700825C4A /* Secret.swift in Sources */,
 				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
@@ -240,6 +247,7 @@
 				FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */,
 				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
 				FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */,
+				FD8147652A2B730E00825C4A /* GPTService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,10 @@ class WhisperService: NSObject, ObservableObject {
     @Published var text: String = "..."
     @Published var isTranscribing: Bool = false
 
-    let openAI: OpenAI
+    private let openAI: OpenAI
 
     override init() {
-        openAI = OpenAI(apiToken: Secret.openAPIKey)
+        openAI = OpenAI(apiToken: Secret.whisperKey)
     }
 
     func transcribe(file: Data, fileName: String = "recording.m4a") {
