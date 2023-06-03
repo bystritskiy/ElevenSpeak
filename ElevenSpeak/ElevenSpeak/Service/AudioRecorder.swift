@@ -2,22 +2,21 @@
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
 import AVFoundation
+import OpenAI
 import SwiftUI
 
+// swiftlint:disable all
 class AudioRecorder: NSObject, ObservableObject {
-    private var audioRecorder: AVAudioRecorder?
-    private var audioPlayer: AVAudioPlayer?
+    var audioFileData: Data?
     @Published var isRecording = false
-    @Published var isPlaying = false
-    @Published var audioFileURL: URL?
-    @Published var audioFilePath: String?
+
+    private var audioRecorder: AVAudioRecorder?
+    private var audioFilePath: String?
 
     func startRecording() {
-        print("Starting recording...")
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentsDirectory.appendingPathComponent("recording.m4a")
-        print("Audio file path: \(audioFilename)") // Check the printed output for correctness
-        audioFilePath = audioFilename.path
+        let audioFileName = documentsDirectory.appendingPathComponent("recording.m4a")
+        audioFilePath = audioFileName.path
 
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -27,8 +26,7 @@ class AudioRecorder: NSObject, ObservableObject {
         ]
 
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            audioRecorder?.delegate = self
+            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
             audioRecorder?.record()
             isRecording = true
         } catch {
@@ -39,37 +37,8 @@ class AudioRecorder: NSObject, ObservableObject {
     func stopRecording() {
         audioRecorder?.stop()
         isRecording = false
-    }
 
-    func playRecording() {
-        guard let audioFilePath else { return }
-        let audioFileURL = URL(fileURLWithPath: audioFilePath)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
-            audioPlayer?.delegate = self
-            audioPlayer?.play()
-            isPlaying = true
-        } catch {
-            print("Failed to play recording")
-        }
-    }
-
-    func stopPlaying() {
-        audioPlayer?.stop()
-        isPlaying = false
-    }
-}
-
-extension AudioRecorder: AVAudioRecorderDelegate {
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            print("Recording was not successful")
-        }
-    }
-}
-
-extension AudioRecorder: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        isPlaying = false
+        let audioFileURL = URL(fileURLWithPath: audioFilePath!)
+        audioFileData = try! Data(contentsOf: audioFileURL)
     }
 }

@@ -4,8 +4,8 @@
 import SwiftUI
 
 struct InputView: View {
-    @StateObject var whisperService: WhisperService = .init()
     @ObservedObject var audioRecorder: AudioRecorder = .init()
+    @ObservedObject var whisperService: WhisperService = .init()
 
     var body: some View {
         VStack {
@@ -14,15 +14,13 @@ struct InputView: View {
                 Image(systemName: "mic.fill")
                     .resizable()
                     .frame(width: 40, height: 50)
-                    .foregroundColor(whisperService.isRecording ? .red : .blue)
+                    .foregroundColor(audioRecorder.isRecording ? .red : .blue)
             }
-            CustomWaveformView(amplitudes: whisperService.waveformAmplitudes)
-                .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100, alignment: .center)
         }
     }
 
     func didTapListeningButton() {
-        if whisperService.isRecording {
+        if audioRecorder.isRecording {
             stopListening()
         } else {
             startListening()
@@ -30,13 +28,12 @@ struct InputView: View {
     }
 
     func startListening() {
-        whisperService.startRecording()
-//        audioRecorder.startRecording()
+        audioRecorder.startRecording()
     }
 
     func stopListening() {
-        whisperService.stopRecording()
-//        audioRecorder.stopRecording()
+        audioRecorder.stopRecording()
+        whisperService.transcribe(file: audioRecorder.audioFileData!)
     }
 }
 
