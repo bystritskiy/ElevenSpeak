@@ -16,6 +16,9 @@
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
 		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
+		FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */; };
+		FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */; };
+		FD8092932A2B0C3C008EA8A2 /* tiny.bin in Resources */ = {isa = PBXBuildFile; fileRef = FD8092922A2B0C3C008EA8A2 /* tiny.bin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
 		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaveformView.swift; sourceTree = "<group>"; };
+		FD8092922A2B0C3C008EA8A2 /* tiny.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = tiny.bin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */,
+				FD8092922A2B0C3C008EA8A2 /* tiny.bin */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
 				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
 				FD5419FF2A2A0C7800F68C68 /* ContentView.swift */,
+				FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2FDE542A2A268800C0199C /* Teacher.swift */,
+				FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2FDE502A2A22D700C0199C /* tiny.en.bin in Resources */,
+				FD8092932A2B0C3C008EA8A2 /* tiny.bin in Resources */,
 				FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */,
 				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
 				FD2FDE552A2A268800C0199C /* Teacher.swift in Sources */,
+				FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */,
 				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
 				FD2FDE5D2A2A282700C0199C /* Secret.swift in Sources */,
 				FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */,
@@ -469,8 +481,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exPHAT/SwiftWhisper";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = fast;
+				kind = branch;
 			};
 		};
 		FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */ = {

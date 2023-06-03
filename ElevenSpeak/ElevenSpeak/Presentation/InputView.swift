@@ -5,6 +5,7 @@ import SwiftUI
 
 struct InputView: View {
     @StateObject var teacher: Teacher = .init()
+    @ObservedObject var audioRecorder: AudioRecorder = .init()
     @State var isListening = false
 
     var body: some View {
@@ -19,6 +20,8 @@ struct InputView: View {
                     .frame(width: 40, height: 50)
                     .foregroundColor(isListening ? .red : .blue)
             }
+            CustomWaveformView(amplitudes: teacher.waveformAmplitudes)
+                .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100, alignment: .center)
         }
     }
 
@@ -33,11 +36,13 @@ struct InputView: View {
     func startListening() {
         isListening = true
         teacher.startRecording()
+        audioRecorder.startRecording()
     }
 
     func stopListening() {
         isListening = false
         teacher.stopRecording()
+        audioRecorder.stopRecording()
     }
 }
 

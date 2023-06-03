@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dylanshine/openai-kit.git",
       "state" : {
-        "revision" : "db5c74c5ad637376f6c778db188c5c2fd8d606ab",
-        "version" : "1.7.2"
+        "revision" : "71c0e10d07f18ea16e958f5621c9d62eb8ade972",
+        "version" : "1.8.0"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/exPHAT/SwiftWhisper",
       "state" : {
-        "revision" : "9ce16480a603e0257366cca005d0606e209bd410",
-        "version" : "1.0.3"
+        "branch" : "fast",
+        "revision" : "381d45a73062808faaa15a30a40e4d17e54633af"
       }
     }
   ],
