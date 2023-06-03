@@ -47,7 +47,7 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
         let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
         let configuration = Configuration(apiKey: OpenAI.apiKey)
         openAI = OpenAIKit.Client(httpClient: httpClient, configuration: configuration)
-        let modelURL = Bundle.main.url(forResource: "tiny.en", withExtension: ".bin")!
+        let modelURL = Bundle.main.url(forResource: "tiny", withExtension: ".bin")!
         whisper = Whisper(fromFileURL: modelURL)
     }
 
