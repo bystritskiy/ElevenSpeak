@@ -4,28 +4,25 @@
 import SwiftUI
 
 struct InputView: View {
-    @StateObject var teacher: Teacher = .init()
+    @StateObject var whisperService: WhisperService = .init()
     @ObservedObject var audioRecorder: AudioRecorder = .init()
 
     var body: some View {
         VStack {
-            Text(teacher.text)
-            Text(teacher.realTimeTranscription)
-            Text("\(Int(teacher.transcribeProgress) * 100)%")
-
+            Text(whisperService.text)
             Button { didTapListeningButton() } label: {
                 Image(systemName: "mic.fill")
                     .resizable()
                     .frame(width: 40, height: 50)
-                    .foregroundColor(teacher.isRecording ? .red : .blue)
+                    .foregroundColor(whisperService.isRecording ? .red : .blue)
             }
-            CustomWaveformView(amplitudes: teacher.waveformAmplitudes)
+            CustomWaveformView(amplitudes: whisperService.waveformAmplitudes)
                 .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100, alignment: .center)
         }
     }
 
     func didTapListeningButton() {
-        if teacher.isRecording {
+        if whisperService.isRecording {
             stopListening()
         } else {
             startListening()
@@ -33,13 +30,13 @@ struct InputView: View {
     }
 
     func startListening() {
-        teacher.startRecording()
-        audioRecorder.startRecording()
+        whisperService.startRecording()
+//        audioRecorder.startRecording()
     }
 
     func stopListening() {
-        teacher.stopRecording()
-        audioRecorder.stopRecording()
+        whisperService.stopRecording()
+//        audioRecorder.stopRecording()
     }
 }
 

@@ -1,12 +1,11 @@
-// Teacher.swift
+// WhisperService.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
-import AudioKit
 import AVFoundation
 import Foundation
 import SwiftWhisper
 
-class Teacher: NSObject, ObservableObject {
+class WhisperService: NSObject, ObservableObject {
     @Published var text: String = ""
     @Published var isRecording: Bool = false
     @Published var isTranscribing: Bool = false
@@ -17,7 +16,6 @@ class Teacher: NSObject, ObservableObject {
     private var whisper: Whisper!
     private let whisperModel = Bundle.main.url(forResource: "tiny", withExtension: "bin")!
 
-    private var inputNode: AVAudioNode!
     private var audioFrames: [Float] = []
     private let audioEngine = AVAudioEngine()
     private let audioSession = AVAudioSession.sharedInstance()
@@ -64,30 +62,14 @@ class Teacher: NSObject, ObservableObject {
 
     private func startAudioEngine() {
         audioFrames.removeAll()
-        whisper.delegate = self
-        inputNode = audioEngine.inputNode
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-
-        // Reset real-time transcription at the start of a new recording.
         realTimeTranscription = ""
+        whisper.delegate = self
 
-        inputNode.installTap(onBus: 0, bufferSize: 2048, format: recordingFormat) { (buffer: AVAudioPCMBuffer, _) in
+        let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
+        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 2048, format: recordingFormat) { buffer, when in
             // Append recorded audio frames to the buffer.
             let recordedFrames = [Float](UnsafeBufferPointer(buffer.audioBufferList.pointee.mBuffers))
             self.audioFrames.append(contentsOf: recordedFrames)
-
-            // Calculate RMS amplitude levels for the waveform
-            let chunkSize = 160 // Define the chunk size for RMS calculation
-            var rmsAmplitudes: [CGFloat] = []
-            for index in stride(from: 0, to: recordedFrames.count, by: chunkSize) {
-                let chunk = recordedFrames[index ..< min(index + chunkSize, recordedFrames.count)]
-                let rms = sqrt(chunk.map { CGFloat($0) * CGFloat($0) }.reduce(0, +) / CGFloat(chunk.count))
-                rmsAmplitudes.append(rms)
-            }
-
-            DispatchQueue.main.async {
-                self.waveformAmplitudes = rmsAmplitudes
-            }
         }
 
         audioEngine.prepare()
@@ -101,7 +83,8 @@ class Teacher: NSObject, ObservableObject {
     }
 
     private func endRecording() {
-        inputNode.removeTap(onBus: 0)
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
         isRecording = false
     }
 
@@ -122,7 +105,7 @@ class Teacher: NSObject, ObservableObject {
     }
 }
 
-extension Teacher: WhisperDelegate {
+extension WhisperService: WhisperDelegate {
     func whisper(_ aWhisper: Whisper, didUpdateProgress progress: Double) {
         transcribeProgress = max(0, min(1, progress))
     }
@@ -134,9 +117,7 @@ extension Teacher: WhisperDelegate {
         }
     }
 
-    func whisper(_ aWhisper: Whisper, didCompleteWithSegments segments: [Segment]) {
-        print(segments)
-    }
+    func whisper(_ aWhisper: Whisper, didCompleteWithSegments segments: [Segment]) {}
 
     func whisper(_ aWhisper: Whisper, didErrorWith error: Error) {
         print(error)

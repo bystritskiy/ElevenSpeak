@@ -10,7 +10,7 @@
 		FD0A0FB62A2A2B65004FDEF9 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = FD0A0FB52A2A2B65004FDEF9 /* SwiftWhisper */; };
 		FD0A0FB82A2A2B68004FDEF9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD0A0FB72A2A2B68004FDEF9 /* OpenAIKit */; };
 		FD2FDE502A2A22D700C0199C /* tiny.en.bin in Resources */ = {isa = PBXBuildFile; fileRef = FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */; };
-		FD2FDE552A2A268800C0199C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FDE542A2A268800C0199C /* Teacher.swift */; };
+		FD2FDE552A2A268800C0199C /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FDE542A2A268800C0199C /* WhisperService.swift */; };
 		FD2FDE5D2A2A282700C0199C /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FDE5C2A2A282700C0199C /* Secret.swift */; };
 		FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */; };
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = tiny.en.bin; sourceTree = "<group>"; };
-		FD2FDE542A2A268800C0199C /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		FD2FDE542A2A268800C0199C /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		FD2FDE5C2A2A282700C0199C /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenSpeakApp.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		FD541A222A2A1CB500F68C68 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FD2FDE542A2A268800C0199C /* Teacher.swift */,
+				FD2FDE542A2A268800C0199C /* WhisperService.swift */,
 				FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */,
 			);
 			path = Service;
@@ -259,7 +259,7 @@
 			files = (
 				FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */,
 				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
-				FD2FDE552A2A268800C0199C /* Teacher.swift in Sources */,
+				FD2FDE552A2A268800C0199C /* WhisperService.swift in Sources */,
 				FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */,
 				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
 				FD2FDE5D2A2A282700C0199C /* Secret.swift in Sources */,
