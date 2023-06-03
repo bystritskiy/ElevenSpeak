@@ -19,6 +19,7 @@
 		FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */; };
 		FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */; };
 		FD8092932A2B0C3C008EA8A2 /* tiny.bin in Resources */ = {isa = PBXBuildFile; fileRef = FD8092922A2B0C3C008EA8A2 /* tiny.bin */; };
+		FD8092962A2B0DE1008EA8A2 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD8092952A2B0DE1008EA8A2 /* AudioKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8092962A2B0DE1008EA8A2 /* AudioKit in Frameworks */,
 				FD0A0FB62A2A2B65004FDEF9 /* SwiftWhisper in Frameworks */,
 				FD0A0FB82A2A2B68004FDEF9 /* OpenAIKit in Frameworks */,
 			);
@@ -152,6 +154,7 @@
 			packageProductDependencies = (
 				FD0A0FB52A2A2B65004FDEF9 /* SwiftWhisper */,
 				FD0A0FB72A2A2B68004FDEF9 /* OpenAIKit */,
+				FD8092952A2B0DE1008EA8A2 /* AudioKit */,
 			);
 			productName = ElevenSpeak;
 			productReference = FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */;
@@ -184,6 +187,7 @@
 			packageReferences = (
 				FD0A0FB22A2A2AEC004FDEF9 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
 				FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */,
+				FD8092942A2B0DE1008EA8A2 /* XCRemoteSwiftPackageReference "AudioKit" */,
 			);
 			productRefGroup = FD5419FB2A2A0C7800F68C68 /* Products */;
 			projectDirPath = "";
@@ -493,6 +497,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		FD8092942A2B0DE1008EA8A2 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +517,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */;
 			productName = OpenAIKit;
+		};
+		FD8092952A2B0DE1008EA8A2 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD8092942A2B0DE1008EA8A2 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,7 +6,6 @@ import SwiftUI
 struct InputView: View {
     @StateObject var teacher: Teacher = .init()
     @ObservedObject var audioRecorder: AudioRecorder = .init()
-    @State var isListening = false
 
     var body: some View {
         VStack {
@@ -18,7 +17,7 @@ struct InputView: View {
                 Image(systemName: "mic.fill")
                     .resizable()
                     .frame(width: 40, height: 50)
-                    .foregroundColor(isListening ? .red : .blue)
+                    .foregroundColor(teacher.isRecording ? .red : .blue)
             }
             CustomWaveformView(amplitudes: teacher.waveformAmplitudes)
                 .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100, alignment: .center)
@@ -26,7 +25,7 @@ struct InputView: View {
     }
 
     func didTapListeningButton() {
-        if isListening {
+        if teacher.isRecording {
             stopListening()
         } else {
             startListening()
@@ -34,13 +33,11 @@ struct InputView: View {
     }
 
     func startListening() {
-        isListening = true
         teacher.startRecording()
         audioRecorder.startRecording()
     }
 
     func stopListening() {
-        isListening = false
         teacher.stopRecording()
         audioRecorder.stopRecording()
     }

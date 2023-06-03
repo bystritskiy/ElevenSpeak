@@ -1,54 +1,29 @@
 // Teacher.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
-import AsyncHTTPClient
+import AudioKit
 import AVFoundation
 import Foundation
-import OpenAIKit
-import OSLog
 import SwiftWhisper
 
-class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDelegate {
-    @Published
-    var text: String = ""
+class Teacher: NSObject, ObservableObject {
+    @Published var text: String = ""
+    @Published var isRecording: Bool = false
+    @Published var isTranscribing: Bool = false
+    @Published var transcribeProgress: Double = 0
+    @Published var realTimeTranscription: String = ""
+    @Published var waveformAmplitudes: [CGFloat] = []
 
-    @Published
-    var isRecording: Bool = false
-
-    @Published
-    var hasRecording: Bool = false
-
-    @Published
-    var isTranscribing: Bool = false
-
-    @Published
-    var transcribeProgress: Double = 0
-
-    @Published
-    var isAuthorized: Bool = false
-
-    @Published
-    var realTimeTranscription: String = ""
-
-    @Published
-    var waveformAmplitudes: [CGFloat] = []
-
-    private let logger: Logger
-    private var isBusy: Bool = false
-    private var audioFrames: [Float] = []
     private var whisper: Whisper!
-    private let openAI: OpenAIKit.Client
+    private let whisperModel = Bundle.main.url(forResource: "tiny", withExtension: "bin")!
+
     private var inputNode: AVAudioNode!
+    private var audioFrames: [Float] = []
     private let audioEngine = AVAudioEngine()
     private let audioSession = AVAudioSession.sharedInstance()
 
     override init() {
-        logger = Logger(subsystem: "com.bystritskiy.ElevenSpeak", category: "ElevenSpeak")
-        let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
-        let configuration = Configuration(apiKey: OpenAI.apiKey)
-        openAI = OpenAIKit.Client(httpClient: httpClient, configuration: configuration)
-        let modelURL = Bundle.main.url(forResource: "tiny", withExtension: ".bin")!
-        whisper = Whisper(fromFileURL: modelURL)
+        whisper = Whisper(fromFileURL: whisperModel)
     }
 
     @MainActor
@@ -67,7 +42,7 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
                 }
             }
         } catch {
-            logger.error("\(error)")
+            print(error)
         }
     }
 
@@ -83,7 +58,6 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
     func clear() {
         text = ""
         audioFrames = []
-        hasRecording = false
     }
 
     // MARK: - Private
@@ -97,11 +71,7 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
         // Reset real-time transcription at the start of a new recording.
         realTimeTranscription = ""
 
-        inputNode.installTap(
-            onBus: 0,
-            bufferSize: 2048,
-            format: recordingFormat
-        ) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+        inputNode.installTap(onBus: 0, bufferSize: 2048, format: recordingFormat) { (buffer: AVAudioPCMBuffer, _) in
             // Append recorded audio frames to the buffer.
             let recordedFrames = [Float](UnsafeBufferPointer(buffer.audioBufferList.pointee.mBuffers))
             self.audioFrames.append(contentsOf: recordedFrames)
@@ -117,9 +87,6 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
 
             DispatchQueue.main.async {
                 self.waveformAmplitudes = rmsAmplitudes
-                // Print the count and the first few amplitude values
-                let count = self.waveformAmplitudes.count
-                let firstFewAmplitudes = self.waveformAmplitudes.prefix(10)
             }
         }
 
@@ -128,7 +95,7 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
             try audioEngine.start()
             isRecording = true
         } catch {
-            logger.error("\(error)")
+            print(error)
             endRecording()
         }
     }
@@ -136,18 +103,6 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
     private func endRecording() {
         inputNode.removeTap(onBus: 0)
         isRecording = false
-        hasRecording = !audioFrames.isEmpty
-    }
-
-    internal func whisper(_ aWhisper: Whisper, didUpdateProgress progress: Double) {
-        transcribeProgress = max(0, min(1, progress))
-    }
-
-    func whisper(_ aWhisper: Whisper, didProcessNewSegments segments: [Segment], atIndex index: Int) {
-        // Update the real-time transcription property with the transcribed segment text.
-        DispatchQueue.main.async {
-            self.realTimeTranscription += segments.map(\.text).joined()
-        }
     }
 
     @MainActor
@@ -161,8 +116,29 @@ class Teacher: NSObject, ObservableObject, AVAudioRecorderDelegate, WhisperDeleg
                 self.text = newText
                 print(text)
             } catch {
-                logger.error("\(error)")
+                print(error)
             }
         }
+    }
+}
+
+extension Teacher: WhisperDelegate {
+    func whisper(_ aWhisper: Whisper, didUpdateProgress progress: Double) {
+        transcribeProgress = max(0, min(1, progress))
+    }
+
+    func whisper(_ aWhisper: Whisper, didProcessNewSegments segments: [Segment], atIndex index: Int) {
+        // Update the real-time transcription property with the transcribed segment text.
+        DispatchQueue.main.async {
+            self.realTimeTranscription += segments.map(\.text).joined()
+        }
+    }
+
+    func whisper(_ aWhisper: Whisper, didCompleteWithSegments segments: [Segment]) {
+        print(segments)
+    }
+
+    func whisper(_ aWhisper: Whisper, didErrorWith error: Error) {
+        print(error)
     }
 }
