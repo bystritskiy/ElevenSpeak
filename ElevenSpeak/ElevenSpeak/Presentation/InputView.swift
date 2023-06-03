@@ -4,7 +4,7 @@
 import SwiftUI
 
 struct InputView: View {
-    @ObservedObject var audioRecorder: AudioRecorder = .init()
+    @ObservedObject var audioService: AudioService = .init()
     @ObservedObject var whisperService: WhisperService = .init()
 
     var body: some View {
@@ -14,13 +14,13 @@ struct InputView: View {
                 Image(systemName: "mic.fill")
                     .resizable()
                     .frame(width: 40, height: 50)
-                    .foregroundColor(audioRecorder.isRecording ? .red : .blue)
+                    .foregroundColor(audioService.isRecording ? .red : .blue)
             }
         }
     }
 
     func didTapListeningButton() {
-        if audioRecorder.isRecording {
+        if audioService.isRecording {
             stopListening()
         } else {
             startListening()
@@ -28,12 +28,12 @@ struct InputView: View {
     }
 
     func startListening() {
-        audioRecorder.startRecording()
+        audioService.startRecording()
     }
 
     func stopListening() {
-        audioRecorder.stopRecording()
-        whisperService.transcribe(file: audioRecorder.audioFileData!)
+        audioService.stopRecording()
+        whisperService.transcribe(file: audioService.audioFileData!)
     }
 }
 

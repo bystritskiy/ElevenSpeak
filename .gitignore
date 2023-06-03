@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 ElevenSpeak/ElevenSpeak/Application/Secret.xcconfig
+ElevenSpeak/ElevenSpeak/Application/Secret.swift

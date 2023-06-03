@@ -11,7 +11,7 @@
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
 		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
-		FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */; };
+		FD80928F2A2B0958008EA8A2 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioService.swift */; };
 		FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */; };
 		FD81475F2A2B614800825C4A /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FD81475E2A2B614800825C4A /* OpenAI */; };
 		FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147602A2B62A500825C4A /* WhisperService.swift */; };
@@ -25,7 +25,7 @@
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
 		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		FD80928E2A2B0958008EA8A2 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaveformView.swift; sourceTree = "<group>"; };
 		FD8147602A2B62A500825C4A /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		FD8147622A2B6B3700825C4A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		FD541A222A2A1CB500F68C68 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FD80928E2A2B0958008EA8A2 /* AudioRecorder.swift */,
+				FD80928E2A2B0958008EA8A2 /* AudioService.swift */,
 				FD8147602A2B62A500825C4A /* WhisperService.swift */,
 			);
 			path = Service;
@@ -233,7 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD80928F2A2B0958008EA8A2 /* AudioRecorder.swift in Sources */,
+				FD80928F2A2B0958008EA8A2 /* AudioService.swift in Sources */,
 				FD8147632A2B6B3700825C4A /* Secret.swift in Sources */,
 				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
 				FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */,
