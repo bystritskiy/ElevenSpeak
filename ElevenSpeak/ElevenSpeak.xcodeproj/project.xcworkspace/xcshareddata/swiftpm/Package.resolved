@@ -10,21 +10,12 @@
       }
     },
     {
-      "identity" : "chatgptswift",
+      "identity" : "openai-kit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alfianlosari/ChatGPTSwift.git",
+      "location" : "https://github.com/dylanshine/openai-kit.git",
       "state" : {
-        "revision" : "3add305675795c1eeec93d6175a9b04d6f415c15",
-        "version" : "1.4.0"
-      }
-    },
-    {
-      "identity" : "gptencoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alfianlosari/GPTEncoder.git",
-      "state" : {
-        "revision" : "a86968867ab4380e36b904a14c42215f71efe8b4",
-        "version" : "1.0.4"
+        "revision" : "db5c74c5ad637376f6c778db188c5c2fd8d606ab",
+        "version" : "1.7.2"
       }
     },
     {

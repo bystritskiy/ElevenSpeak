@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0A0FB62A2A2B65004FDEF9 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = FD0A0FB52A2A2B65004FDEF9 /* SwiftWhisper */; };
+		FD0A0FB82A2A2B68004FDEF9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD0A0FB72A2A2B68004FDEF9 /* OpenAIKit */; };
+		FD2FDE502A2A22D700C0199C /* tiny.en.bin in Resources */ = {isa = PBXBuildFile; fileRef = FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */; };
+		FD2FDE552A2A268800C0199C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FDE542A2A268800C0199C /* Teacher.swift */; };
+		FD2FDE5D2A2A282700C0199C /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FDE5C2A2A282700C0199C /* Secret.swift */; };
 		FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */; };
 		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
-		FD541A0D2A2A0D9200F68C68 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0C2A2A0D9200F68C68 /* MessageView.swift */; };
 		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
-		FD541A112A2A0DA600F68C68 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A102A2A0DA600F68C68 /* ViewModel.swift */; };
-		FD541A132A2A0DB000F68C68 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A122A2A0DB000F68C68 /* Message.swift */; };
-		FD541A162A2A14E000F68C68 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = FD541A152A2A14E000F68C68 /* SwiftWhisper */; };
-		FD541A192A2A15ED00F68C68 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD541A182A2A15ED00F68C68 /* ChatGPTSwift */; };
-		FD541A1B2A2A169F00F68C68 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A1A2A2A169F00F68C68 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = tiny.en.bin; sourceTree = "<group>"; };
+		FD2FDE542A2A268800C0199C /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		FD2FDE5C2A2A282700C0199C /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenSpeakApp.swift; sourceTree = "<group>"; };
 		FD5419FF2A2A0C7800F68C68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
-		FD541A0C2A2A0D9200F68C68 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		FD541A102A2A0DA600F68C68 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		FD541A122A2A0DB000F68C68 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		FD541A1A2A2A169F00F68C68 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,19 +35,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD541A192A2A15ED00F68C68 /* ChatGPTSwift in Frameworks */,
-				FD541A162A2A14E000F68C68 /* SwiftWhisper in Frameworks */,
+				FD0A0FB62A2A2B65004FDEF9 /* SwiftWhisper in Frameworks */,
+				FD0A0FB82A2A2B68004FDEF9 /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0A0FB42A2A2B65004FDEF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD2FDE512A2A22DE00C0199C /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				FD2FDE4F2A2A22D700C0199C /* tiny.en.bin */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
 		FD5419F12A2A0C7800F68C68 = {
 			isa = PBXGroup;
 			children = (
 				FD5419FC2A2A0C7800F68C68 /* ElevenSpeak */,
 				FD5419FB2A2A0C7800F68C68 /* Products */,
+				FD0A0FB42A2A2B65004FDEF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +78,6 @@
 		FD5419FC2A2A0C7800F68C68 /* ElevenSpeak */ = {
 			isa = PBXGroup;
 			children = (
-				FD541A1F2A2A1CA000F68C68 /* Extension */,
 				FD541A1E2A2A1C9400F68C68 /* Application */,
 				FD541A222A2A1CB500F68C68 /* Service */,
 				FD541A202A2A1CA500F68C68 /* Model */,
@@ -77,25 +90,16 @@
 		FD541A1E2A2A1C9400F68C68 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FD2FDE512A2A22DE00C0199C /* ML */,
 				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
-				FD541A1A2A2A169F00F68C68 /* Constants.swift */,
-				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
+				FD2FDE5C2A2A282700C0199C /* Secret.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		FD541A1F2A2A1CA000F68C68 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		FD541A202A2A1CA500F68C68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD541A122A2A0DB000F68C68 /* Message.swift */,
-				FD541A102A2A0DA600F68C68 /* ViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,9 +107,9 @@
 		FD541A212A2A1CAD00F68C68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
 				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
 				FD5419FF2A2A0C7800F68C68 /* ContentView.swift */,
-				FD541A0C2A2A0D9200F68C68 /* MessageView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -113,6 +117,7 @@
 		FD541A222A2A1CB500F68C68 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FD2FDE542A2A268800C0199C /* Teacher.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -136,8 +141,8 @@
 			);
 			name = ElevenSpeak;
 			packageProductDependencies = (
-				FD541A152A2A14E000F68C68 /* SwiftWhisper */,
-				FD541A182A2A15ED00F68C68 /* ChatGPTSwift */,
+				FD0A0FB52A2A2B65004FDEF9 /* SwiftWhisper */,
+				FD0A0FB72A2A2B68004FDEF9 /* OpenAIKit */,
 			);
 			productName = ElevenSpeak;
 			productReference = FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */;
@@ -168,8 +173,8 @@
 			);
 			mainGroup = FD5419F12A2A0C7800F68C68;
 			packageReferences = (
-				FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
-				FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+				FD0A0FB22A2A2AEC004FDEF9 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
+				FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */,
 			);
 			productRefGroup = FD5419FB2A2A0C7800F68C68 /* Products */;
 			projectDirPath = "";
@@ -185,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD2FDE502A2A22D700C0199C /* tiny.en.bin in Resources */,
 				FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,12 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD541A112A2A0DA600F68C68 /* ViewModel.swift in Sources */,
-				FD541A0D2A2A0D9200F68C68 /* MessageView.swift in Sources */,
 				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
-				FD541A132A2A0DB000F68C68 /* Message.swift in Sources */,
-				FD541A1B2A2A169F00F68C68 /* Constants.swift in Sources */,
+				FD2FDE552A2A268800C0199C /* Teacher.swift in Sources */,
 				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
+				FD2FDE5D2A2A282700C0199C /* Secret.swift in Sources */,
 				FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,9 +380,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElevenSpeak/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElevenSpeak;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to transcribe your speech.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +395,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bystritskiy.ElevenSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -411,9 +417,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElevenSpeak/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElevenSpeak;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to transcribe your speech.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -424,7 +432,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bystritskiy.ElevenSpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -457,7 +465,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */ = {
+		FD0A0FB22A2A2AEC004FDEF9 /* XCRemoteSwiftPackageReference "SwiftWhisper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exPHAT/SwiftWhisper";
 			requirement = {
@@ -465,9 +473,9 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+		FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -476,15 +484,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FD541A152A2A14E000F68C68 /* SwiftWhisper */ = {
+		FD0A0FB52A2A2B65004FDEF9 /* SwiftWhisper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FD541A142A2A14E000F68C68 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
+			package = FD0A0FB22A2A2AEC004FDEF9 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
 			productName = SwiftWhisper;
 		};
-		FD541A182A2A15ED00F68C68 /* ChatGPTSwift */ = {
+		FD0A0FB72A2A2B68004FDEF9 /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FD541A172A2A15ED00F68C68 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
-			productName = ChatGPTSwift;
+			package = FD0A0FB32A2A2AFF004FDEF9 /* XCRemoteSwiftPackageReference "openai-kit" */;
+			productName = OpenAIKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

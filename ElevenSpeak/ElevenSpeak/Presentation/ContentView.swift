@@ -5,20 +5,15 @@ import AVFoundation
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel: ViewModel
-
     var body: some View {
         VStack {
-            ScrollView {
-                ForEach(viewModel.messages, id: \.self) { message in
-                    MessageView(message: message)
-                }
-            }
-            InputView(text: $viewModel.currentInput, onCommit: viewModel.sendMessage)
+            InputView()
         }
     }
+}
 
-    init() {
-        viewModel = ViewModel()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

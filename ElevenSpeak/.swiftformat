@@ -1,5 +1,5 @@
 --header "{file}\nElevenSpeak. Created by Bogdan Bystritskiy."
 
---disable unusedArguments, trailingCommas
+--disable unusedArguments
 
 --swiftversion 5.8
