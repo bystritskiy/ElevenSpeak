@@ -4,9 +4,10 @@
 import SwiftUI
 
 struct InputView: View {
-    @ObservedObject var audioService: AudioService = .init()
-    @ObservedObject var whisperService: WhisperService = .init()
-    @ObservedObject var gptService: GPTService = .init()
+    @ObservedObject var audioRecorderService = AudioRecorderService()
+    @ObservedObject var whisperService = WhisperService()
+    @ObservedObject var gptService = GPTService()
+    @ObservedObject var elevanLabsService = ElevenLabsService()
 
     @State var answer: String = "..."
 
@@ -18,13 +19,13 @@ struct InputView: View {
                 Image(systemName: "mic.fill")
                     .resizable()
                     .frame(width: 40, height: 50)
-                    .foregroundColor(audioService.isRecording ? .red : .blue)
+                    .foregroundColor(audioRecorderService.isRecording ? .red : .blue)
             }
         }
     }
 
     func didTapListeningButton() {
-        if audioService.isRecording {
+        if audioRecorderService.isRecording {
             stopListening()
         } else {
             startListening()
@@ -33,14 +34,15 @@ struct InputView: View {
 
     func startListening() {
         whisperService.text = ""
-        audioService.startRecording()
+        audioRecorderService.startRecording()
     }
 
     func stopListening() {
-        audioService.stopRecording()
-        whisperService.transcribe(file: audioService.audioFileData!)
+        audioRecorderService.stopRecording()
+        whisperService.transcribe(file: audioRecorderService.audioFileData!)
         gptService.getAnswer(prompt: whisperService.text) { result in
             answer = result ?? "..."
+            elevanLabsService.getAudio(from: answer)
         }
     }
 }

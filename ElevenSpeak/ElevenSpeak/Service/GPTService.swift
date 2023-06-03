@@ -1,7 +1,6 @@
 // GPTService.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
-import Combine
 import Foundation
 import OpenAI
 
@@ -17,7 +16,7 @@ class GPTService: NSObject, ObservableObject {
             model: .gpt3_5Turbo,
             messages: [
                 .init(role: .system, content: Promt.teacherPromt),
-                .init(role: .user, content: prompt),
+                .init(role: .user, content: prompt)
             ]
         )
         Task {
@@ -25,7 +24,6 @@ class GPTService: NSObject, ObservableObject {
                 let result = try await openAI.chats(query: query)
                 completion(result.choices.first?.message.content)
             } catch {
-                print(error.localizedDescription)
                 completion(nil)
             }
         }

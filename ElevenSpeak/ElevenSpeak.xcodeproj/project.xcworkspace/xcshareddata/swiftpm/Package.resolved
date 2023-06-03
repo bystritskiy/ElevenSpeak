@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "elevenlabsswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ArchieGoodwin/ElevenlabsSwift",
+      "state" : {
+        "revision" : "89edd5c3420dba7f1f7f63bb6239b7d275469343",
+        "version" : "0.7.4"
+      }
+    },
+    {
       "identity" : "openai",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/MacPaw/OpenAI",

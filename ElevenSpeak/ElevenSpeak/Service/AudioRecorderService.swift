@@ -1,12 +1,10 @@
-// AudioService.swift
+// AudioRecorderService.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
 import AVFoundation
-import OpenAI
-import SwiftUI
 
 // swiftlint:disable all
-class AudioService: NSObject, ObservableObject {
+class AudioRecorderService: NSObject, ObservableObject {
     var audioFileData: Data?
     @Published var isRecording = false
 
