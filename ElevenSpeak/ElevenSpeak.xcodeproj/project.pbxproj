@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */; };
-		FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5419FF2A2A0C7800F68C68 /* ContentView.swift */; };
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
-		FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* InputView.swift */; };
+		FD541A0F2A2A0D9C00F68C68 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */; };
 		FD80928F2A2B0958008EA8A2 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioRecorderService.swift */; };
 		FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */; };
 		FD81475F2A2B614800825C4A /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FD81475E2A2B614800825C4A /* OpenAI */; };
@@ -21,15 +19,17 @@
 		FD81476A2A2B7C1000825C4A /* ElevenlabsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD8147692A2B7C1000825C4A /* ElevenlabsSwift */; };
 		FD81476C2A2B7C1900825C4A /* ElevenLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81476B2A2B7C1900825C4A /* ElevenLabsService.swift */; };
 		FD81476E2A2BA2F800825C4A /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81476D2A2BA2F800825C4A /* AudioPlayerService.swift */; };
+		FDAFAF452A2C7AE5005CE791 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAFAF442A2C7AE5005CE791 /* SettingsView.swift */; };
+		FDAFAF472A2C7B3D005CE791 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAFAF462A2C7B3D005CE791 /* MainView.swift */; };
+		FDAFAF492A2C8197005CE791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAFAF482A2C8197005CE791 /* AppDelegate.swift */; };
+		FDAFAF4B2A2C81A1005CE791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAFAF4A2A2C81A1005CE791 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenSpeakApp.swift; sourceTree = "<group>"; };
-		FD5419FF2A2A0C7800F68C68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
-		FD541A0E2A2A0D9C00F68C68 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		FD80928E2A2B0958008EA8A2 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
 		FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaveformView.swift; sourceTree = "<group>"; };
 		FD8147602A2B62A500825C4A /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
@@ -38,6 +38,10 @@
 		FD8147662A2B78F200825C4A /* Promt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promt.swift; sourceTree = "<group>"; };
 		FD81476B2A2B7C1900825C4A /* ElevenLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsService.swift; sourceTree = "<group>"; };
 		FD81476D2A2BA2F800825C4A /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		FDAFAF442A2C7AE5005CE791 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FDAFAF462A2C7B3D005CE791 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FDAFAF482A2C8197005CE791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDAFAF4A2A2C81A1005CE791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				FD541A012A2A0C7900F68C68 /* Assets.xcassets */,
 				FD8147622A2B6B3700825C4A /* Secret.swift */,
 				FD8147662A2B78F200825C4A /* Promt.swift */,
+				FDAFAF482A2C8197005CE791 /* AppDelegate.swift */,
+				FDAFAF4A2A2C81A1005CE791 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -109,10 +115,9 @@
 		FD541A212A2A1CAD00F68C68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FD5419FD2A2A0C7800F68C68 /* ElevenSpeakApp.swift */,
-				FD541A0E2A2A0D9C00F68C68 /* InputView.swift */,
-				FD5419FF2A2A0C7800F68C68 /* ContentView.swift */,
-				FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */,
+				FDAFAF462A2C7B3D005CE791 /* MainView.swift */,
+				FDAFAF422A2C7AD2005CE791 /* Chat */,
+				FDAFAF432A2C7AD5005CE791 /* Settings */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -127,6 +132,23 @@
 				FD81476B2A2B7C1900825C4A /* ElevenLabsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FDAFAF422A2C7AD2005CE791 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */,
+				FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		FDAFAF432A2C7AD5005CE791 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FDAFAF442A2C7AE5005CE791 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,16 +272,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8147672A2B78F200825C4A /* Promt.swift in Sources */,
+				FDAFAF4B2A2C81A1005CE791 /* SceneDelegate.swift in Sources */,
+				FDAFAF472A2C7B3D005CE791 /* MainView.swift in Sources */,
 				FD80928F2A2B0958008EA8A2 /* AudioRecorderService.swift in Sources */,
 				FD8147632A2B6B3700825C4A /* Secret.swift in Sources */,
-				FD541A0F2A2A0D9C00F68C68 /* InputView.swift in Sources */,
+				FD541A0F2A2A0D9C00F68C68 /* ChatView.swift in Sources */,
 				FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */,
 				FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */,
 				FD81476C2A2B7C1900825C4A /* ElevenLabsService.swift in Sources */,
-				FD541A002A2A0C7800F68C68 /* ContentView.swift in Sources */,
-				FD5419FE2A2A0C7800F68C68 /* ElevenSpeakApp.swift in Sources */,
+				FDAFAF492A2C8197005CE791 /* AppDelegate.swift in Sources */,
 				FD81476E2A2BA2F800825C4A /* AudioPlayerService.swift in Sources */,
 				FD8147652A2B730E00825C4A /* GPTService.swift in Sources */,
+				FDAFAF452A2C7AE5005CE791 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +436,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -449,7 +473,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

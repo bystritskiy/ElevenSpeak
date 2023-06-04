@@ -5,7 +5,7 @@ import Foundation
 import OpenAI
 
 class WhisperService: NSObject, ObservableObject {
-    @Published var text: String = "..."
+    @Published var text: String = ""
     @Published var isTranscribing: Bool = false
 
     private let openAI: OpenAI
