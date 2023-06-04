@@ -1,9 +1,9 @@
-// ChatView.swift
+// HomeView.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
 import SwiftUI
 
-struct ChatView: View {
+struct HomeView: View {
     @ObservedObject var audioRecorderService = AudioRecorderService()
     @ObservedObject var whisperService = WhisperService()
     @ObservedObject var gptService = GPTService()
@@ -47,8 +47,8 @@ struct ChatView: View {
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        HomeView()
     }
 }

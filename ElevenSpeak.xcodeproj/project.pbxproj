@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		FD541A022A2A0C7900F68C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD541A012A2A0C7900F68C68 /* Assets.xcassets */; };
-		FD541A0F2A2A0D9C00F68C68 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */; };
+		FD541A0F2A2A0D9C00F68C68 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD541A0E2A2A0D9C00F68C68 /* HomeView.swift */; };
+		FD63869E2A2CABEA001EA164 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386902A2CABEA001EA164 /* DetailView.swift */; };
+		FD63869F2A2CABEA001EA164 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386912A2CABEA001EA164 /* ListView.swift */; };
+		FD6386A12A2CABEA001EA164 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386942A2CABEA001EA164 /* DateProvider.swift */; };
+		FD6386A22A2CABEA001EA164 /* IDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386952A2CABEA001EA164 /* IDProvider.swift */; };
+		FD6386A32A2CABEA001EA164 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386962A2CABEA001EA164 /* ChatView.swift */; };
+		FD6386A42A2CABEA001EA164 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386982A2CABEA001EA164 /* Conversation.swift */; };
+		FD6386A52A2CABEA001EA164 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386992A2CABEA001EA164 /* Message.swift */; };
+		FD6386A62A2CABEA001EA164 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63869A2A2CABEA001EA164 /* ChatStore.swift */; };
+		FD6386A92A2CB15D001EA164 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6386A82A2CB15D001EA164 /* ChatBubbleView.swift */; };
 		FD80928F2A2B0958008EA8A2 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80928E2A2B0958008EA8A2 /* AudioRecorderService.swift */; };
-		FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */; };
 		FD81475F2A2B614800825C4A /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FD81475E2A2B614800825C4A /* OpenAI */; };
 		FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147602A2B62A500825C4A /* WhisperService.swift */; };
 		FD8147632A2B6B3700825C4A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8147622A2B6B3700825C4A /* Secret.swift */; };
@@ -29,9 +37,17 @@
 		FD5419FA2A2A0C7800F68C68 /* ElevenSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD541A012A2A0C7900F68C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenSpeak.entitlements; sourceTree = "<group>"; };
-		FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		FD541A0E2A2A0D9C00F68C68 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FD6386902A2CABEA001EA164 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		FD6386912A2CABEA001EA164 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FD6386942A2CABEA001EA164 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		FD6386952A2CABEA001EA164 /* IDProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDProvider.swift; sourceTree = "<group>"; };
+		FD6386962A2CABEA001EA164 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		FD6386982A2CABEA001EA164 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		FD6386992A2CABEA001EA164 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FD63869A2A2CABEA001EA164 /* ChatStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		FD6386A82A2CB15D001EA164 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		FD80928E2A2B0958008EA8A2 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
-		FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaveformView.swift; sourceTree = "<group>"; };
 		FD8147602A2B62A500825C4A /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		FD8147622A2B6B3700825C4A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		FD8147642A2B730E00825C4A /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
@@ -86,7 +102,8 @@
 			children = (
 				FD541A1E2A2A1C9400F68C68 /* Application */,
 				FD541A222A2A1CB500F68C68 /* Service */,
-				FD541A202A2A1CA500F68C68 /* Model */,
+				FD6386972A2CABEA001EA164 /* Models */,
+				FD6386932A2CABEA001EA164 /* Environment */,
 				FD541A212A2A1CAD00F68C68 /* Presentation */,
 				FD541A062A2A0C7900F68C68 /* ElevenSpeak.entitlements */,
 			);
@@ -105,17 +122,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FD541A202A2A1CA500F68C68 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		FD541A212A2A1CAD00F68C68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				FDAFAF462A2C7B3D005CE791 /* MainView.swift */,
+				FD6386962A2CABEA001EA164 /* ChatView.swift */,
+				FD6386912A2CABEA001EA164 /* ListView.swift */,
+				FD6386902A2CABEA001EA164 /* DetailView.swift */,
+				FD6386A82A2CB15D001EA164 /* ChatBubbleView.swift */,
 				FDAFAF422A2C7AD2005CE791 /* Chat */,
 				FDAFAF432A2C7AD5005CE791 /* Settings */,
 			);
@@ -134,11 +148,29 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FD6386932A2CABEA001EA164 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				FD63869A2A2CABEA001EA164 /* ChatStore.swift */,
+				FD6386942A2CABEA001EA164 /* DateProvider.swift */,
+				FD6386952A2CABEA001EA164 /* IDProvider.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		FD6386972A2CABEA001EA164 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD6386982A2CABEA001EA164 /* Conversation.swift */,
+				FD6386992A2CABEA001EA164 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FDAFAF422A2C7AD2005CE791 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FD541A0E2A2A0D9C00F68C68 /* ChatView.swift */,
-				FD8092902A2B0984008EA8A2 /* CustomWaveformView.swift */,
+				FD541A0E2A2A0D9C00F68C68 /* HomeView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -271,17 +303,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6386A42A2CABEA001EA164 /* Conversation.swift in Sources */,
 				FD8147672A2B78F200825C4A /* Promt.swift in Sources */,
+				FD63869F2A2CABEA001EA164 /* ListView.swift in Sources */,
+				FD6386A32A2CABEA001EA164 /* ChatView.swift in Sources */,
+				FD63869E2A2CABEA001EA164 /* DetailView.swift in Sources */,
+				FD6386A62A2CABEA001EA164 /* ChatStore.swift in Sources */,
 				FDAFAF4B2A2C81A1005CE791 /* SceneDelegate.swift in Sources */,
 				FDAFAF472A2C7B3D005CE791 /* MainView.swift in Sources */,
+				FD6386A52A2CABEA001EA164 /* Message.swift in Sources */,
 				FD80928F2A2B0958008EA8A2 /* AudioRecorderService.swift in Sources */,
+				FD6386A12A2CABEA001EA164 /* DateProvider.swift in Sources */,
 				FD8147632A2B6B3700825C4A /* Secret.swift in Sources */,
-				FD541A0F2A2A0D9C00F68C68 /* ChatView.swift in Sources */,
-				FD8092912A2B0984008EA8A2 /* CustomWaveformView.swift in Sources */,
+				FD541A0F2A2A0D9C00F68C68 /* HomeView.swift in Sources */,
 				FD8147612A2B62A500825C4A /* WhisperService.swift in Sources */,
 				FD81476C2A2B7C1900825C4A /* ElevenLabsService.swift in Sources */,
 				FDAFAF492A2C8197005CE791 /* AppDelegate.swift in Sources */,
+				FD6386A92A2CB15D001EA164 /* ChatBubbleView.swift in Sources */,
 				FD81476E2A2BA2F800825C4A /* AudioPlayerService.swift in Sources */,
+				FD6386A22A2CABEA001EA164 /* IDProvider.swift in Sources */,
 				FD8147652A2B730E00825C4A /* GPTService.swift in Sources */,
 				FDAFAF452A2C7AE5005CE791 /* SettingsView.swift in Sources */,
 			);
