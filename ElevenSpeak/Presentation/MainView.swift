@@ -22,22 +22,6 @@ struct MainView: View {
     }
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ChatView(store: chatStore)
-                .tabItem {
-                    Label("Chat new", systemImage: "0.circle")
-                }
-                .tag(0)
-            HomeView()
-                .tabItem {
-                    Label("Chat old", systemImage: "1.circle")
-                }
-                .tag(1)
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "2.circle")
-                }
-                .tag(1)
-        }
+        ChatView(store: chatStore)
     }
 }

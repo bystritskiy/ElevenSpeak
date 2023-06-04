@@ -5,12 +5,15 @@ import OpenAI
 import SwiftUI
 
 struct DetailView: View {
-    @State var inputText: String = ""
     @FocusState private var isFocused: Bool
 
     let conversation: Conversation
     let error: Error?
     let sendMessage: (String, Model) -> Void
+
+    @ObservedObject var audioRecorderService = AudioRecorderService()
+    @ObservedObject var whisperService = WhisperService()
+    @ObservedObject var elevanLabsService = ElevenLabsService()
 
     private var fillColor: Color {
         Color(uiColor: UIColor.systemBackground)
@@ -37,11 +40,9 @@ struct DetailView: View {
 //                            scrollViewProxy.scrollTo(lastMessage.id, anchor: .bottom)
 //                        }
 //                    }
-
                     if let error {
                         errorMessage(error: error)
                     }
-
                     inputBar(scrollViewProxy: scrollViewProxy)
                 }
                 .navigationTitle("Chat")
@@ -60,61 +61,39 @@ struct DetailView: View {
 
     @ViewBuilder private func inputBar(scrollViewProxy: ScrollViewProxy) -> some View {
         HStack {
-            TextEditor(
-                text: $inputText
-            )
-            .padding(.vertical, -8)
-            .padding(.horizontal, -4)
-            .frame(minHeight: 22, maxHeight: 300)
-            .foregroundColor(.primary)
-            .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
-            .background(
-                RoundedRectangle(
-                    cornerRadius: 16,
-                    style: .continuous
-                )
-                .fill(fillColor)
-                .overlay(
-                    RoundedRectangle(
-                        cornerRadius: 16,
-                        style: .continuous
-                    )
-                    .stroke(
-                        strokeColor,
-                        lineWidth: 1
-                    )
-                )
-            )
-            .fixedSize(horizontal: false, vertical: true)
-            .onSubmit {
-                withAnimation {
-                    tapSendMessage(scrollViewProxy: scrollViewProxy)
-                }
-            }
-            .padding(.leading)
-
             Button(action: {
                 withAnimation {
-                    tapSendMessage(scrollViewProxy: scrollViewProxy)
+                    didTapListeningButton()
                 }
             }) {
-                Image(systemName: "paperplane")
+                Image(systemName: "mic.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 24, height: 24)
-                    .padding(.trailing)
+                    .foregroundColor(audioRecorderService.isRecording ? .red : .blue)
             }
         }
         .padding(.bottom)
     }
 
-    private func tapSendMessage(scrollViewProxy: ScrollViewProxy) {
-        sendMessage(inputText, .gpt3_5Turbo)
-        inputText = ""
+    private func didTapListeningButton() {
+        if audioRecorderService.isRecording {
+            stopListening()
+        } else {
+            startListening()
+        }
+    }
 
-//        if let lastMessage = conversation.messages.last {
-//            scrollViewProxy.scrollTo(lastMessage.id, anchor: .bottom)
-//        }
+    private func startListening() {
+        whisperService.text = ""
+        audioRecorderService.startRecording()
+    }
+
+    private func stopListening() {
+        audioRecorderService.stopRecording()
+        whisperService.transcribe(file: audioRecorderService.audioFileData!)
+        sendMessage(whisperService.text, .gpt3_5Turbo)
+//        elevanLabsService.getAudio(from: answer)
     }
 }
 
