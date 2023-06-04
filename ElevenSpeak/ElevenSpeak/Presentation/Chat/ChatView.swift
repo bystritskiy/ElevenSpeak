@@ -1,9 +1,9 @@
-// InputView.swift
+// ChatView.swift
 // ElevenSpeak. Created by Bogdan Bystritskiy.
 
 import SwiftUI
 
-struct InputView: View {
+struct ChatView: View {
     @ObservedObject var audioRecorderService = AudioRecorderService()
     @ObservedObject var whisperService = WhisperService()
     @ObservedObject var gptService = GPTService()
@@ -41,14 +41,14 @@ struct InputView: View {
         audioRecorderService.stopRecording()
         whisperService.transcribe(file: audioRecorderService.audioFileData!)
         gptService.getAnswer(prompt: whisperService.text) { result in
-            answer = result ?? "..."
+            answer = result
             elevanLabsService.getAudio(from: answer)
         }
     }
 }
 
-struct InputView_Previews: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        InputView()
+        ChatView()
     }
 }
