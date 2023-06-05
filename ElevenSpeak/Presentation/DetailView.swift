@@ -5,8 +5,6 @@ import OpenAI
 import SwiftUI
 
 struct DetailView: View {
-    @FocusState private var isFocused: Bool
-
     let conversation: Conversation
     let error: Error?
     let sendMessage: (String, Model) -> Void
@@ -35,11 +33,15 @@ struct DetailView: View {
                     }
                     .listStyle(.plain)
                     .animation(.default, value: conversation.messages)
-//                    .onChange(of: conversation) { newValue in
-//                        if let lastMessage = newValue.messages.last {
-//                            scrollViewProxy.scrollTo(lastMessage.id, anchor: .bottom)
-//                        }
-//                    }
+                    .onChange(of: conversation) { newValue in
+                        if let lastMessage = newValue.messages.last {
+                            scrollViewProxy.scrollTo(lastMessage.id, anchor: .bottom)
+
+                            if lastMessage.role == .assistant {
+                                elevanLabsService.getAudio(from: lastMessage.content)
+                            }
+                        }
+                    }
                     if let error {
                         errorMessage(error: error)
                     }
@@ -85,15 +87,14 @@ struct DetailView: View {
     }
 
     private func startListening() {
-        whisperService.text = ""
         audioRecorderService.startRecording()
     }
 
     private func stopListening() {
         audioRecorderService.stopRecording()
-        whisperService.transcribe(file: audioRecorderService.audioFileData!)
-        sendMessage(whisperService.text, .gpt3_5Turbo)
-//        elevanLabsService.getAudio(from: answer)
+        whisperService.transcribe(file: audioRecorderService.audioFileData!) { text in
+            sendMessage(text, .gpt3_5Turbo)
+        }
     }
 }
 
